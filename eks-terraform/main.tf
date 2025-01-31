@@ -1,5 +1,5 @@
 provider "aws" {
-  region = "eu-west"  # Specify your desired region
+  region = "eu-west-1"  # Specify your desired region
 }
 
  #Creating IAM role for EKS
