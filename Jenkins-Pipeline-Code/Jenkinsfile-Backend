@@ -79,15 +79,15 @@ pipeline {
         }
         stage('Update Deployment file') {
             environment {
-                GIT_REPO_NAME = "https://github.com/sekhar9346/2nd10WeeksofCloudOps-main.git"
-                GIT_USER_NAME = "https://github.com/sekhar9346/2nd10WeeksofCloudOps-main.git"
+                GIT_REPO_NAME = "2nd10WeeksofCloudOps-main.git"
+                GIT_USER_NAME = "sekhar9346"
             }
             steps {
                 dir('kubernetes-files') {
                     withCredentials([string(credentialsId: 'my-git-pattoken', variable: 'git_token')]) {
                         sh '''
                             git config user.email "cloud87777@gmail.com"
-                            git config user.name "https://github.com/sekhar9346/2nd10WeeksofCloudOps-main.git"
+                            git config user.name "sekhar9346"
                             BUILD_NUMBER=${BUILD_NUMBER}
                             echo $BUILD_NUMBER
                             sed -i "s#image:.*#image: $REPOSITORY_URI$AWS_ECR_REPO_NAME:$BUILD_NUMBER#g" backend-deployment.yaml
