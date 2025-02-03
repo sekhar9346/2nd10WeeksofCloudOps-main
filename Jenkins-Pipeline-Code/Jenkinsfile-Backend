@@ -69,7 +69,7 @@ pipeline {
         //}
         stage('Checkout Code') {
             steps {
-                git branch: 'main', url: 'https://https://github.com/sekhar9346/2nd10WeeksofCloudOps-main.git'
+                git branch: 'main', url: 'https://github.com/sekhar9346/2nd10WeeksofCloudOps-main.git'
             }
         }
         stage('Update Deployment file') {
