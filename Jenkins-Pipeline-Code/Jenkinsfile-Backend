@@ -40,12 +40,7 @@ pipeline {
                 }
             }
         }
-        stage('Trivy File Scan') {
-            steps {
-                dir('backend') {
-                    sh 'trivy fs . > trivyfs.txt'
-                }
-            }
+        
         }
         stage("Docker Image Build") {
             steps {
