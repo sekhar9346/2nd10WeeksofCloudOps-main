@@ -74,7 +74,7 @@ pipeline {
         }
         stage('Update Deployment file') {
             environment {
-                GIT_REPO_NAME = "2nd10WeeksofCloudOps-main.git"
+                GIT_REPO_NAME = "2nd10WeeksofCloudOps-main"
                 GIT_USER_NAME = "sekhar9346"
             }
             steps {
