@@ -7,9 +7,9 @@ terraform {
   }
 
   backend "s3" {
-    bucket = "dskcmqwx"
+    bucket = "cadcacaecwec"
     key    = "eks/terraform.tfstate"
-    region = "us-east-1"
+    region = "eu-west-2"
   }
 
   required_version = ">= 1.6.3"
