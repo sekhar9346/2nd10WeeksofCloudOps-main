@@ -4,7 +4,7 @@ provider "aws" {
 
  #Creating IAM role for EKS
   resource "aws_iam_role" "master" {
-    name = "veera-eks-master2"
+    name = "veera-eks-master3"
 
     assume_role_policy = jsonencode({
       "Version": "2012-10-17",
@@ -36,7 +36,7 @@ provider "aws" {
   }
 
   resource "aws_iam_role" "worker" {
-    name = "veera-eks-worker2"
+    name = "veera-eks-worker3"
 
     assume_role_policy = jsonencode({
       "Version": "2012-10-17",
@@ -53,7 +53,7 @@ provider "aws" {
   }
 
   resource "aws_iam_policy" "autoscaler" {
-    name = "veera-eks-autoscaler-policy2"
+    name = "veera-eks-autoscaler-policy3"
     policy = jsonencode({
       "Version": "2012-10-17",
       "Statement": [
@@ -106,7 +106,7 @@ provider "aws" {
 
   resource "aws_iam_instance_profile" "worker" {
     depends_on = [aws_iam_role.worker]
-    name       = "veera-eks-worker-new-profile2"
+    name       = "veera-eks-worker-new-profile3"
     role       = aws_iam_role.worker.name
   }
  
@@ -161,7 +161,7 @@ data "aws_security_group" "selected" {
   }
  resource "aws_eks_node_group" "node-grp" {
     cluster_name    = aws_eks_cluster.eks.name
-    node_group_name = "project-node-group1"
+    node_group_name = "project-node-group3"
     node_role_arn   = aws_iam_role.worker.arn
     subnet_ids      = [data.aws_subnet.subnet-1.id, data.aws_subnet.subnet-2.id]
     capacity_type   = "ON_DEMAND"
